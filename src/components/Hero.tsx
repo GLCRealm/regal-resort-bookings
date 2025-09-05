@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slides */}
       {slides.map((slide, index) => (
         <div
@@ -70,37 +70,37 @@ const Hero = () => {
       ))}
 
       {/* Content Overlay */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="animate-fade-in-up">
           {/* Awards Badge */}
-          <div className="inline-flex items-center space-x-2 bg-card/20 backdrop-blur-sm border border-border/30 rounded-full px-6 py-2 mb-6">
-            <Star className="h-4 w-4 text-secondary fill-current" />
-            <span className="text-sm font-elegant text-foreground">Forbes 5-Star Luxury Resort</span>
-            <Star className="h-4 w-4 text-secondary fill-current" />
+          <div className="inline-flex items-center space-x-2 bg-card/20 backdrop-blur-sm border border-border/30 rounded-full px-3 sm:px-6 py-2 mb-4 sm:mb-6">
+            <Star className="h-3 w-3 sm:h-4 sm:w-4 text-secondary fill-current" />
+            <span className="text-xs sm:text-sm font-elegant text-foreground">Forbes 5-Star Luxury Resort</span>
+            <Star className="h-3 w-3 sm:h-4 sm:w-4 text-secondary fill-current" />
           </div>
 
-          <h1 className="hero-text mb-4 animate-scale-in">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-royal mb-2 sm:mb-4 animate-scale-in bg-gradient-to-r from-secondary via-yellow-300 to-secondary bg-clip-text text-transparent drop-shadow-lg">
             {slides[currentSlide].title}
           </h1>
           
-          <h2 className="text-2xl md:text-4xl font-royal text-secondary mb-6 animate-slide-in-right">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-royal text-secondary mb-4 sm:mb-6 animate-slide-in-right">
             {slides[currentSlide].subtitle}
           </h2>
           
-          <p className="text-lg md:text-xl text-foreground/90 mb-8 max-w-2xl mx-auto font-elegant leading-relaxed animate-fade-in-up">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground/90 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl mx-auto font-elegant leading-relaxed animate-fade-in-up px-4">
             {slides[currentSlide].description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in-up px-4">
             <Button 
               onClick={scrollToBooking}
-              className="btn-gold px-8 py-4 text-lg"
+              className="btn-gold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg w-full sm:w-auto"
             >
               Reserve Your Escape
             </Button>
             <Button 
               variant="outline"
-              className="border-secondary/50 text-secondary hover:bg-secondary/10 px-8 py-4 text-lg smooth-transition"
+              className="border-secondary/50 text-secondary hover:bg-secondary/10 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg smooth-transition w-full sm:w-auto"
             >
               Explore Suites
             </Button>
@@ -111,25 +111,25 @@ const Hero = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-card/20 backdrop-blur-sm border border-border/30 text-foreground hover:text-secondary smooth-transition hover:scale-110"
+        className="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/20 backdrop-blur-sm border border-border/30 text-foreground hover:text-secondary smooth-transition hover:scale-110"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
       </button>
       
       <button
         onClick={nextSlide}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-card/20 backdrop-blur-sm border border-border/30 text-foreground hover:text-secondary smooth-transition hover:scale-110"
+        className="absolute right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 p-2 sm:p-3 rounded-full bg-card/20 backdrop-blur-sm border border-border/30 text-foreground hover:text-secondary smooth-transition hover:scale-110"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-16 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full smooth-transition ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full smooth-transition ${
               index === currentSlide 
                 ? 'bg-secondary shadow-gold' 
                 : 'bg-foreground/30 hover:bg-foreground/50'
@@ -139,9 +139,9 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-secondary/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-secondary/70 rounded-full mt-2 animate-pulse"></div>
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-4 h-8 sm:w-6 sm:h-10 border-2 border-secondary/50 rounded-full flex justify-center">
+          <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-secondary/70 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
