@@ -28,12 +28,12 @@ const Header = () => {
           <div className="flex items-center space-x-3 smooth-transition hover:scale-105">
             <img 
               src={royalLogo} 
-              alt="Royal Resort Logo" 
+              alt="Nature's Lap Villa Logo" 
               className="h-12 w-12 object-cover rounded-lg shadow-gold"
             />
             <div>
               <h1 className="text-2xl font-royal font-bold bg-gradient-gold bg-clip-text text-transparent">
-                Royal Resort
+                Nature's Lap Villa
               </h1>
               <p className="text-xs text-muted-foreground tracking-widest">LUXURY & ELEGANCE</p>
             </div>
@@ -57,7 +57,7 @@ const Header = () => {
             <div className="flex items-center space-x-4 text-sm">
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 8755559224</span>
               </div>
               <div className="flex items-center space-x-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />

@@ -17,7 +17,7 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Reservations",
-      primary: "+1 (555) 123-4567",
+      primary: "+91 8755559224",
       secondary: "Available 24/7"
     },
     {
@@ -29,8 +29,8 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      primary: "Royal Mountain Resort",
-      secondary: "1234 Luxury Lane, Paradise Valley"
+      primary: "Nature's Lap Villa",
+      secondary: "Mussoorie Div, Near Hotel Taj, Malsi, Dehradun"
     },
     {
       icon: <Clock className="h-6 w-6" />,
@@ -140,7 +140,7 @@ const Contact = () => {
             <div className="space-y-4">
               <Button 
                 className="btn-gold w-full py-6 text-lg"
-                onClick={() => window.location.href = 'tel:+15551234567'}
+                onClick={() => window.location.href = 'tel:+918755559224'}
               >
                 Call for Reservations
               </Button>
@@ -175,7 +175,7 @@ const Contact = () => {
                         Interactive Map Coming Soon
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Paradise Valley, Mountain Region
+                        Mussoorie Div, Near Hotel Taj, Malsi, Dehradun
                       </p>
                     </div>
                   </div>
@@ -187,9 +187,9 @@ const Contact = () => {
                       Resort Address
                     </h4>
                     <p className="text-muted-foreground font-elegant">
-                      Royal Mountain Resort<br />
-                      1234 Luxury Lane<br />
-                      Paradise Valley, Mountain Region 12345
+                      Nature's Lap Villa<br />
+                      Mussoorie Div, Near Hotel Taj, Malsi<br />
+                      Dehradun, Uttarakhand, India
                     </p>
                   </div>
 
