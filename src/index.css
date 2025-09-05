@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Royal Resort Design System - Luxury & Elegance */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Royal Color Palette */
+    --background: 220 15% 5%;
+    --foreground: 45 100% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System */
+    --card: 220 20% 8%;
+    --card-foreground: 45 95% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover System */
+    --popover: 220 25% 10%;
+    --popover-foreground: 45 90% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Royal Primary - Deep Navy */
+    --primary: 220 60% 15%;
+    --primary-foreground: 45 100% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Gold Accents */
+    --secondary: 45 85% 65%;
+    --secondary-foreground: 220 60% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Tones */
+    --muted: 220 25% 12%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Royal Accent */
+    --accent: 280 60% 25%;
+    --accent-foreground: 45 90% 90%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 45 90% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 220 25% 20%;
+    --input: 220 30% 15%;
+    --ring: 45 85% 65%;
 
-    --radius: 0.5rem;
+    /* Royal Gradients */
+    --gradient-royal: linear-gradient(135deg, hsl(220 60% 15%) 0%, hsl(280 60% 25%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 85% 65%) 0%, hsl(35 90% 70%) 100%);
+    --gradient-elegant: linear-gradient(180deg, hsl(220 20% 8% / 0.95) 0%, hsl(220 25% 10% / 0.98) 100%);
+    --gradient-shimmer: linear-gradient(90deg, transparent 0%, hsl(45 85% 65% / 0.3) 50%, transparent 100%);
+
+    /* Shadows */
+    --shadow-royal: 0 25px 50px -12px hsl(220 60% 15% / 0.6);
+    --shadow-gold: 0 20px 40px -8px hsl(45 85% 65% / 0.4);
+    --shadow-elegant: 0 10px 30px -5px hsl(220 25% 5% / 0.8);
+
+    /* Animation Timings */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-royal: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s ease-out;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +123,119 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Royal Button Variants */
+  .btn-royal {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-4 rounded-lg font-semibold tracking-wide;
+    @apply transform transition-all duration-500 hover:scale-105 hover:shadow-lg;
+    box-shadow: var(--shadow-royal);
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-secondary to-yellow-400 text-secondary-foreground px-8 py-4 rounded-lg font-semibold tracking-wide;
+    @apply transform transition-all duration-500 hover:scale-105;
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Elegant Cards */
+  .card-royal {
+    @apply bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl;
+    background: var(--gradient-elegant);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Shimmer Animation */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shimmer);
+    animation: shimmer 2s infinite;
+  }
+
+  /* Royal Hero Text */
+  .hero-text {
+    @apply text-6xl md:text-8xl font-bold bg-gradient-to-r from-secondary via-yellow-300 to-secondary bg-clip-text text-transparent;
+    text-shadow: 0 0 30px hsl(var(--secondary) / 0.3);
+  }
+
+  /* Smooth Transitions */
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+
+  .royal-transition {
+    transition: var(--transition-royal);
+  }
+
+  /* Elegant Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-secondary/60 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary/80;
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(50px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
   }
 }
