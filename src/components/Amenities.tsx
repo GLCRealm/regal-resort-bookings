@@ -156,7 +156,7 @@ const Amenities = () => {
         </div>
 
         {/* Highlight Banner */}
-        <div className="text-center p-8 bg-gradient-royal rounded-2xl shadow-royal animate-shimmer overflow-hidden relative">
+        <div className="text-center p-8 bg-gradient-royal rounded-2xl shadow-royal animate-[shimmer_4s_infinite] overflow-hidden relative">
           <div className="relative z-10">
             <h3 className="text-2xl md:text-3xl font-royal font-bold text-primary-foreground mb-4">
               Experience Unmatched Luxury
